@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Monerosci | Web Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Monerosci</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="start.html">Getting Started</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="interface.html">Python-Interface</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="explorer.html">Explorer</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style=" height: 250px; color: #fff; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957); ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1 style="font-size:35px; margin-top:-50px !important;">Python-Interface for Monerosci</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-3" style="">
+            <div class="header" id="leftHeader">
+                <h4 style="color:#464646;"><span style="border-bottom:1px dotted #464646;">Monerosci</span></h4>
+                  <p>Navigation</p>
+                  <p style="font-size:14px;">Contents:</p>
+
+                  <nav>
+                      <ul class="list-unstyled components">
+                        <li class="active"><a href="#gettingStart"><span style="border-bottom:1px dotted #464646;">Getting Started</span></a></li>
+                        <li><a href="#example"><span style="border-bottom:1px dotted #464646;">Example Code</span></a></li>
+
+                        <li><!-- Link with dropdown items -->
+                          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><span style="border-bottom:1px dotted #464646;">Documentation</span></a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li><a href="#blockchain" style="font-size:17px;"><i class="fa fa-square" style="font-size:10px; margin-left:10px;, margin-top:-3px; margin-right:10px;"></i>Blockchain</a></li>
+                                <li><a href="#block" style="font-size:17px;"><i class="fa fa-square" style="font-size:10px; margin-left:10px;, margin-top:-3px; margin-right:10px;"></i>Block</a></li>
+                                <li><a href="#tx" style="font-size:17px;"><i class="fa fa-square" style="font-size:10px; margin-left:10px;, margin-top:-3px; margin-right:10px;"></i>Tx</a></li>
+                                <li><a href="#input" style="font-size:17px;"><i class="fa fa-square" style="font-size:10px; margin-left:10px;, margin-top:-3px; margin-right:10px;"></i>Input</a></li>
+                                <li><a href="#output" style="font-size:17px;"><i class="fa fa-square" style="font-size:10px; margin-left:10px;, margin-top:-3px; margin-right:10px;"></i>Output</a></li>
+                            </ul>
+                        </li>
+                      </ul>
+                  </nav>
+            </div>
+        </div>
+        <div class="col-md-9">
+          <h4 id="gettingStart" style="font-weight: normal;font-size:30px;">Getting Started</h4>
+          <p>Everthing here was done and tested on Ubuntu 16.04.
+             Python-interface is based on Python::boost library in C++.
+          </p>
+
+          <h4 style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Install RocksDB</h4>
+           <div class="main-content">
+             <span class="comment"># download the latest rocksdb source code from github</span>
+             <p style="margin-top:0px;">git clone https://github.com/facebook/rocksdb.git</p>
+
+             <span class="comment"># go into rocksdb folder</span>
+             <p style="margin-top:0px;">cd rocksdb</p>
+
+             <span class="comment"># compile</span>
+             <p style="margin-top:0px;">DEBUG_LEVEL=0 make shared_lib install-shared</p>
+             <p style="margin-top:0px;">export LD_LIBRARY_PATH=/usr/lib</p>
+
+           </div>
+
+          <h4 style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Install SQLite3</h4>
+           <div class="main-content">
+             <span class="comment"># download the latest SQLite3 source code </span>
+             <p style="margin-top:0px;">wget http://www.sqlite.org/sqlite-autoconf-3071502.tar.gz</p>
+             <p style="margin-top:0px;">tar xvfz sqlite-autoconf-3071502.tar.gz</p>
+
+             <span class="comment"># go into SQLite3 folder</span>
+             <p style="margin-top:0px;">cd sqlite-autoconf-3071502</p>
+
+             <span class="comment"># configure & compile</span>
+             <p style="margin-top:0px;">./configure --prefix=/usr/local</p>
+             <p style="margin-top:0px;">make</p>
+             <p style="margin-top:0px;">make install</p>
+
+           </div>
+
+          <h4 style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Compile and Python-Interface</h4>
+           <div class="main-content">
+             <span class="comment"># download the source code</span>
+             <p style="margin-top:0px;">https://github.com/scorelab/Monerosci</p>
+
+             <span class="comment"># enter the downloaded sourced code folder</span>
+             <p style="margin-top:0px;">cd Monerosci/python-interface</p>
+
+             <span class="comment"># make a build folder and enter it</span>
+             <p style="margin-top:0px;">mkdir build && cd build</p>
+
+            <span class="comment"># create the makefile</span>
+             <p style="margin-top:0px;">cmake ..</p>
+
+             <span class="comment"># compile</span>
+             <p style="margin-top:0px;">make monerosci</p>
+           </div>
+
+          <p>When compilation finishes python shared library monerosci.so file should be created. in /build/out directory</p>
+
+
+          <h4 id="example" style="font-weight: normal;font-size:30px;">Example Code</h4>
+
+          <p>Python need monerosci.so shared library to import monerosci into python. First user need to create a object of Blockchain by giving the Monerosci-parsed data set location as parameter</p>
+          <img src="img/ex.png" />
+
+          <h4 style="font-weight: normal;font-size:30px; margin-top:60px;">Documentation</h4>
+
+          <h4 id="blockchain" style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Blockchain</h4>
+          <p class="code"><i>class</i> monerosci.<b>Blockchain</b>(loc)</p>
+          <p class="code-com">Class representing the blockchain. This class is contructed by passing it a string representing a file path to your Monerosci data files generated by monerosci_parser</p>
+
+          <p class="code"><b>__len__</b>(self: monerosci.monerosci_interface.Blockchain) → <b>int</b> </p>
+          <p class="code-com">Returns the total number of blocks in the blockchain</p>
+
+          <p class="code"><b>.txCount</b>() → <b>int</b> </p>
+          <p class="code-com">Returns the total number of transactions in the blockchain</p>
+
+          <p class="code"><b>.keyImageCount</b>() → <b>int</b> </p>
+          <p class="code-com">Returns the total number of key images in the blockchain</p>
+
+          <h4 id="block" style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px; margin-top:100px;">Block</h4>
+
+            <p class="code"><i>class</i> monerosci.<b>Block</b>(int block_index | string block_hash)</p>
+          <p class="code-com">Class representing a block in the blockchain</p>
+
+            <p class="code"><b>.hash</b> → <b>string</b></p>
+          <p class="code-com" style="margin-left:40px;">Hash of this block</p>
+
+            <p class="code"><b>.height</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Height of this block</p>
+
+            <p class="code"><b>.size</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Size of this block</p>
+
+            <p class="code"><b>.tx_count</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Tx count of this block</p>
+
+            <p class="code"><b>.timestamp</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Timestamp of this block</p>
+
+            <p class="code"><b>.timestamp_utc</b> → <b>string</b></p>
+          <p class="code-com" style="margin-left:40px;">Timestamp(UTC) of this block</p>
+
+            <p class="code"><b>.block_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Index of this block</p>
+
+            <p class="code"><b>.next_block()</b> → <b>python::dict</b></p>
+          <p class="code-com" style="margin-left:40px;">Next block data</p>
+
+            <p class="code"><b>.prev_block()</b> → <b>python::dict</b></p>
+          <p class="code-com" style="margin-left:40px;">Previous block data</p>
+
+             <p class="code"><b>.tx_indexes()</b> → <b>python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">List of tx indexes in this block</p>
+
+             <p class="code"><b>.coinbase_tx()</b> → <b>python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">List of coinbase tx hashes</p>
+
+             <p class="code"><b>.txes()</b> → <b>python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">List of transactions in this block</p>
+
+          <h4 id="tx" style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px; margin-top:100px;">Tx</h4>
+              <p class="code"><i>class</i> monerosci.<b>Tx</b>(int tx_index | string tx_hash)</p>
+          <p class="code-com">Class representing a transaction in the block of blockchain</p>
+
+            <p class="code"><b>.hash</b> → <b>string</b></p>
+          <p class="code-com" style="margin-left:40px;">Hash of this tx</p>
+
+            <p class="code"><b>.block_height</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Height of this tx containing block</p>
+
+            <p class="code"><b>.size</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Size of this tx</p>
+
+            <p class="code"><b>.is_coinbase</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Return is this tx is coinbase or not</p>
+
+            <p class="code"><b>.timestamp</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Timestamp of this tx</p>
+
+            <p class="code"><b>.timestamp_utc</b> → <b>string</b></p>
+          <p class="code-com" style="margin-left:40px;">Timestamp(UTC) of this tx</p>
+
+            <p class="code"><b>.confirmation</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Confirmation of this tx</p>
+
+            <p class="code"><b>.extra</b> → <b>String</b></p>
+          <p class="code-com" style="margin-left:40px;">Extra of this tx</p>
+
+            <p class="code"><b>.input_count</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Input count of this tx</p>
+
+            <p class="code"><b>.mixins</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Mixin count of this tx</p>
+
+            <p class="code"><b>.output_count</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Output count of this tx</p>
+
+            <p class="code"><b>.payment_id</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Payment id of this tx</p>
+
+            <p class="code"><b>.rct_type</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">RingCT type of this tx</p>
+
+            <p class="code"><b>.fee</b> → <b>double</b></p>
+          <p class="code-com" style="margin-left:40px;">Fee of this tx</p>
+
+            <p class="code"><b>.version</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Version of this tx</p>
+
+            <p class="code"><b>.xmr_input</b> → <b>double</b></p>
+          <p class="code-com" style="margin-left:40px;">XMR input amount of this tx</p>
+
+            <p class="code"><b>.xmr_output</b> → <b>double</b></p>
+          <p class="code-com" style="margin-left:40px;">XMR output amount of this tx</p>
+
+            <p class="code"><b>.tx_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Tx index of this tx</p>
+
+            <p class="code"><b>.inputs()</b> → <b>boost::python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">List of inputs of this tx</p>
+
+            <p class="code"><b>.key_image_indexes</b> → <b>boost::python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">List of key images indexes this tx</p>
+
+             <p class="code"><b>.ring_member_indexes(string key_image_hash | int key_image_index)</b> → <b>boost::python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">Ring member indexes of given key image of this tx</p>
+
+             <p class="code"><b>.outputs()</b> → <b>boost::python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">List of outputs of this tx</p>
+
+             <p class="code"><b>.output_indexes()</b> → <b>boost::python::list</b></p>
+          <p class="code-com" style="margin-left:40px;">List output indexes of this tx</p>
+
+          <h4 id="input" style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px; margin-top:100px;">Input</h4>
+            <p class="code"><i>class</i> monerosci.<b>Input</b>(int key_image_index | int ring_member_index)</p>
+          <p class="code-com">Class representing a Input of a transaction in the block of blockchain</p>
+
+            <p class="code"><b>.block_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Block index of this input contain</p>
+
+            <p class="code"><b>.public_key</b> → <b>string</b></p>
+          <p class="code-com" style="margin-left:40px;">Public key of this input</p>
+
+            <p class="code"><b>.output_block_height</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Origin block height of this input</p>
+
+            <p class="code"><b>.tx_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Tx index of this input</p>
+
+            <p class="code"><b>.input_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Input index of this input</p>
+
+            <p class="code"><b>.key_image_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Key image index of this input</p>
+
+
+            <h4 id="output" style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;margin-top:100px;">Output</h4>
+         <p class="code"><i>class</i> monerosci.<b>Output</b>(int tx_index | int output_index)</p>
+          <p class="code-com">Class representing a Output of a transaction in the block of blockchain</p>
+
+            <p class="code"><b>.block_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Block index of this output contain</p>
+
+            <p class="code"><b>.public_key</b> → <b>string</b></p>
+          <p class="code-com" style="margin-left:40px;">Public key of this output</p>
+
+            <p class="code"><b>.amount</b> → <b>double</b></p>
+          <p class="code-com" style="margin-left:40px;">Amount of this output</p>
+
+            <p class="code"><b>.tx_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Tx index of this output</p>
+
+            <p class="code"><b>.output_index</b> → <b>int</b></p>
+          <p class="code-com" style="margin-left:40px;">Output index of this output</p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+     <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://github.com/scorelab/Monerosci" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Sajitha Liyanage 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  <script>
+
+      var header = document.getElementById("leftHeader");
+      // var sticky = header.offsetTop;
+
+        $(document).scroll(function() {
+          var y = $(this).scrollTop();
+          if (y > 280) {
+            header.classList.add("sticky");
+            header.style.marginTop='40px';
+          } else {
+            header.classList.remove("sticky");
+
+          }
+        });
+  </script>
+  </body>
+
+</html>

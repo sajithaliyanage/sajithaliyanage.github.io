@@ -196,7 +196,7 @@ header.masthead .overlay {
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
-  padding: 200px 0 150px;
+  padding: 150px 0 150px;
   color: white;
 }
 
@@ -204,7 +204,7 @@ header.masthead .site-heading {
   header.masthead .page-heading,
   header.masthead .post-heading,
   header.masthead .site-heading {
-    padding: 200px 0;
+    padding: 160px 0;
   }
 }
 
@@ -216,12 +216,21 @@ header.masthead .site-heading {
 header.masthead .page-heading h1,
 header.masthead .site-heading h1 {
   font-size: 50px;
-  margin-top: 0;
+  margin-top: -50px;
 }
 
 header.masthead .page-heading .subheading,
 header.masthead .site-heading .subheading {
   font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.subheading2{
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.1;
   display: block;
@@ -291,6 +300,8 @@ header.masthead .post-heading .meta a {
 .post-preview > a > .post-subtitle {
   font-weight: 300;
   margin: 0 0 10px;
+  font-size:20px;
+  text-align: justify;
 }
 
 .post-preview > .post-meta {
@@ -417,4 +428,50 @@ footer .copyright {
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
+}
+
+
+.main-content{
+    padding: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: #567482;
+    word-wrap: normal;
+    background-color: #f3f6fa;
+    border: solid 1px #dce6f0;
+    border-radius: 0.3rem;
+}
+
+.comment{
+  color:#969896;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.code{
+  font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  color:#222;
+  font-size:17px;
+}
+
+.code-com{
+  font-family: 'goudy old style', 'minion pro', 'bell mt', Georgia, 'Hiragino Mincho Pro', serif;
+  font-size: 18px;
+  color: #3E4349;
+  margin-top:-20px;
+}
+
+.sticky {
+  position: fixed;
+   top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
 }

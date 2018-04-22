@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Monerosci | Web Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+     <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Monerosci</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="start.html">Getting Started</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="interface.html">Python-Interface</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="explorer.html">Explorer</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style=" height: 250px; color: #fff; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957); ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1 style="font-size:35px; margin-top:-50px !important;">Getting Started with Parser</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h4 style="font-weight: normal;color: #159957; font-size:30px;">Prerequisites</h4>
+          <p>Everthing here was done and tested on Ubuntu 16.04.
+             Monero node that runs is using lmdb database for blockchain.
+          </p>
+
+           <h4 style="font-weight: normal;color: #159957; font-size:30px;">Dependencies</h4>
+           <div class="main-content">
+             <span class="comment"># refresh ubuntu's repository</span>
+             <p style="margin-top:0px;">sudo apt-get update</p>
+
+             <span class="comment">#install git</span>
+             <p style="margin-top:0px;">sudo apt-get install git</p>
+
+             <span class="comment"># install dependencies</span>
+             <p style="margin-top:0px;">sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev</p>
+
+           </div>
+
+          <h4 style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Monero compilation</h4>
+           <div class="main-content">
+             <span class="comment"># download the latest monero source code from github</span>
+             <p style="margin-top:0px;">git clone --recursive https://github.com/monero-project/monero</p>
+
+             <span class="comment"># go into monero folder</span>
+             <p style="margin-top:0px;">cd monero/</p>
+
+             <span class="comment"># checkout last monero version</span>
+             <p style="margin-top:0px;">git checkout -b last_release v0.12.0.0</p>
+
+             <span class="comment"># compile</span>
+             <p style="margin-top:0px;">make</p>
+
+           </div>
+
+          <h4 style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Install RocksDB</h4>
+           <div class="main-content">
+             <span class="comment"># download the latest rocksdb source code from github</span>
+             <p style="margin-top:0px;">git clone https://github.com/facebook/rocksdb.git</p>
+
+             <span class="comment"># go into rocksdb folder</span>
+             <p style="margin-top:0px;">cd rocksdb</p>
+
+             <span class="comment"># compile</span>
+             <p style="margin-top:0px;">DEBUG_LEVEL=0 make shared_lib install-shared</p>
+             <p style="margin-top:0px;">export LD_LIBRARY_PATH=/usr/lib</p>
+
+           </div>
+
+          <h4 style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Install SQLite3</h4>
+           <div class="main-content">
+             <span class="comment"># download the latest SQLite3 source code </span>
+             <p style="margin-top:0px;">wget http://www.sqlite.org/sqlite-autoconf-3071502.tar.gz</p>
+             <p style="margin-top:0px;">tar xvfz sqlite-autoconf-3071502.tar.gz</p>
+
+             <span class="comment"># go into SQLite3 folder</span>
+             <p style="margin-top:0px;">cd sqlite-autoconf-3071502</p>
+
+             <span class="comment"># configure & compile</span>
+             <p style="margin-top:0px;">./configure --prefix=/usr/local</p>
+             <p style="margin-top:0px;">make</p>
+             <p style="margin-top:0px;">make install</p>
+
+           </div>
+
+          <h4 style="margin-top:20px; font-weight: normal;color: #159957; font-size:30px;">Compile and Run Parser</h4>
+           <div class="main-content">
+             <span class="comment"># download the source code</span>
+             <p style="margin-top:0px;">https://github.com/scorelab/Monerosci</p>
+
+             <span class="comment"># enter the downloaded sourced code folder</span>
+             <p style="margin-top:0px;">cd Monerosci/parser</p>
+
+             <span class="comment"># make a build folder and enter it</span>
+             <p style="margin-top:0px;">mkdir build && cd build</p>
+
+            <span class="comment"># create the makefile</span>
+             <p style="margin-top:0px;">cmake ..</p>
+
+             <span class="comment"># compile</span>
+             <p style="margin-top:0px;">make</p>
+           </div>
+
+          <p>When compilation finishes executable monerosci should be created.</p>
+          <p>To run it:</p>
+          <div class="main-content">
+             <p style="margin-top:0px;">./monerosci</p>
+           </div>
+
+          <p>By default it will look for blockchain in its default location i.e., ~/.bitmonero/lmdb. You can use --bc-path option if its in different location</p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+     <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://github.com/scorelab/Monerosci" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Sajitha Liyanage 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
