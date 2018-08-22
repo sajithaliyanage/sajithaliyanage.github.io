@@ -475,3 +475,15 @@ a{
 .sticky + .content {
   padding-top: 102px;
 }
+
+.class-main{
+  background-color:#E5F1FA;
+  padding:5px 10px 5px 10px;
+  border-top:3px solid #3176BA;
+}
+
+.class-method{
+  background-color:#efefef;
+  padding:5px 10px 5px 10px;
+  border-left:3px solid #afaaaa;
+}
