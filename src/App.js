@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import $ from "jquery";
 import "./App.scss";
 import Header from "./components/Header";
@@ -10,6 +12,8 @@ class App extends Component {
       foo: "bar",
       resumeData: {},
       sharedData: {},
+      particlesInit: this.particlesInit.bind(this),
+      particlesLoaded: this.particlesLoaded.bind(this),
     };
   }
 
@@ -64,9 +68,67 @@ class App extends Component {
     });
   }
 
+  async particlesInit(main) {
+    await loadFull(main);
+  }
+
+  particlesLoaded(container) {
+    console.log(container);
+  }
+
   render() {
     return (
       <div>
+        <Particles
+          id="tsparticles"
+          init={this.state.particlesInit}
+          loaded={this.state.particlesLoaded}
+          options={{
+            fpsLimit: 120,
+            particles: {
+              color: {
+                value: "#ffffff",
+              },
+              links: {
+                color: "#ffffff",
+                distance: 150,
+                enable: true,
+                opacity: 0.5,
+                width: 1,
+              },
+              collisions: {
+                enable: true,
+              },
+              move: {
+                directions: "none",
+                enable: true,
+                outModes: {
+                  default: "bounce",
+                },
+                random: false,
+                speed: 1,
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  area: 1000,
+                },
+                value: 80,
+              },
+              opacity: {
+                value: 0.5,
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                value: { min: 1, max: 5 },
+              },
+            },
+            detectRetina: true,
+          }}
+        />
         <Header sharedData={this.state.sharedData.basic_info} />
       </div>
     );

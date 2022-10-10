@@ -20,13 +20,46 @@ html {
 }
 
 .title-styles {
-	font-family: 'Raleway', sans-serif;
-	font-size: 250%;
+	font-family: 'Lato', sans-serif;
+	font-size: 300%;
+	font-weight: 300;
 }
 
 .header-icon {
 	height: 150px;
 	width: 150px;
+}
+
+.button-swap {
+	position: fixed !important;
+	align-items: center;
+	justify-content: center;
+	bottom: 25px !important;
+	left:50%;
+	right:50%;
+}
+
+#tsparticles > canvas {
+	background: linear-gradient(to right, #dbb64e, #c7bea4);
+}
+
+.select-icons {
+	margin-top: 50px;
+	padding: 5px;
+	height: 50px;
+	width: 50px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 2px solid;
+	border-radius: 100%;
+	color: #353239;
+	transition: all .2s ease-in-out !important; 
+}
+  
+.select-icons:hover {
+	transform: scale(1.1) !important;
+	box-shadow: 0 0 10px #353239;
+	text-shadow: 0 0 10px #353239;
 }
 
 header {
@@ -38,7 +71,6 @@ header {
 	-webkit-background-size: cover;
 	text-align: center;
 	overflow: hidden;
-	background-color: #f2f2f0;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -105,20 +137,6 @@ header h1 {
 .styles_typicalWrapper__1_Uvh::after {
 	cursor: none !important;
 	display: none;
-}
-
-#about {
-	background: #fff;
-	overflow: hidden;
-}
-
-#about h1 {
-	padding-top: 5%;
-	font: 18px/24px 'opensans-bold', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: black;
-	text-align: center;
 }
 
 .foto img {
