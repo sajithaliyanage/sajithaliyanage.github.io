@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Typical from "react-typical";
-import Switch from "react-switch";
+import React, { Component } from 'react';
+import Typical from 'react-typical';
+import Switch from 'react-switch';
 
 class Header extends Component {
   titles = [];
@@ -17,10 +17,10 @@ class Header extends Component {
   }
 
   setTheme() {
-    var dataThemeAttribute = "data-theme";
+    var dataThemeAttribute = 'data-theme';
     var body = document.body;
     var newTheme =
-      body.getAttribute(dataThemeAttribute) === "dark" ? "light" : "dark";
+      body.getAttribute(dataThemeAttribute) === 'dark' ? 'light' : 'dark';
     body.setAttribute(dataThemeAttribute, newTheme);
   }
 
@@ -48,14 +48,14 @@ class Header extends Component {
     return (
       <header
         id="home"
-        style={{ height: "100vh", display: "block", zIndex: 1000 }}
+        style={{ height: '100vh', display: 'block', zIndex: 1000 }}
       >
-        <div className="row aligner" style={{ height: "70vh" }}>
+        <div className="row aligner" style={{ height: '70vh' }}>
           <div className="col-md-12">
             <div
               style={{
-                display: "justify-inbetween",
-                position: "flex",
+                display: 'justify-inbetween',
+                position: 'flex',
               }}
             >
               <span
@@ -66,7 +66,7 @@ class Header extends Component {
               <br />
               <h1
                 className="mb-0"
-                style={{ fontSize: "75px", fontFamily: "Lato" }}
+                style={{ fontSize: '75px', fontFamily: 'Lato' }}
               >
                 <Typical steps={[name]} wrapper="p" />
               </h1>
@@ -119,7 +119,7 @@ class Header extends Component {
                   ></span>
                 </a>
                 <a
-                  href="https://drive.google.com/file/d/1fVdR_RinDUh9kIx8XekHMRg8M9OsPB-S/view?usp=sharing"
+                  href="https://drive.google.com/file/d/12WyFYYKi0asVCCmrGJKCMAahh7LcsGSM/view?usp=sharing"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -159,12 +159,12 @@ class Header extends Component {
                 data-icon="twemoji:owl"
                 data-inline="false"
                 style={{
-                  display: "block",
-                  height: "100%",
+                  display: 'block',
+                  height: '100%',
                   fontSize: 25,
-                  textAlign: "end",
-                  marginLeft: "20px",
-                  color: "#353239",
+                  textAlign: 'end',
+                  marginLeft: '20px',
+                  color: '#353239',
                 }}
               ></span>
             }
@@ -174,12 +174,12 @@ class Header extends Component {
                 data-icon="noto-v1:sun-with-face"
                 data-inline="false"
                 style={{
-                  display: "block",
-                  height: "100%",
+                  display: 'block',
+                  height: '100%',
                   fontSize: 25,
-                  textAlign: "end",
-                  marginLeft: "10px",
-                  color: "#353239",
+                  textAlign: 'end',
+                  marginLeft: '10px',
+                  color: '#353239',
                 }}
               ></span>
             }
